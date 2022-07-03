@@ -20,7 +20,8 @@
     "serve": "node dist/server.js",
     "start": "npm run serve",
     "dev:server": "nodemon --watch './**/*.ts' --exec 'node -r esbuild-register' src/server.ts",
-    "dev:debug": "nodemon --watch './**/*.ts' --exec 'node --nolazy --inspect=9229 -r esbuild-register' src/server.ts"
+    "dev:debug": "nodemon --watch './**/*.ts' --exec 'node --nolazy --inspect=9229 -r esbuild-register' src/server.ts",
+    "sandbox": "esbuild-register' src/server.ts"
   },
   "resolutions": {
     "glob-parent": "^6.0.1"
