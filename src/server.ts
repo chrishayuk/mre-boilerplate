@@ -24,7 +24,9 @@ function runApp() {
   });
 
   // Handle new application sessions
-  server.adapter.onConnection((context) => new App(context));
+  server.adapter.onConnection((context) => {
+    return new App(context);
+  });
 }
 
 // Check whether code is running in a debuggable watched filesystem
@@ -42,5 +44,3 @@ if (isDebug) {
 } else {
   runApp();
 }
-
-//await new Promise(resolve => setTimeout(resolve, 1000));

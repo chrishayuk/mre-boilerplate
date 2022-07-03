@@ -14,12 +14,11 @@ import {
  * The main class of this app. All the logic goes here.
  */
 export default class HelloWorld {
-  private text: Actor = null;
-  private cube: Actor = null;
+  // private variables
   private assets: AssetContainer;
 
   constructor(private context: Context) {
-    console.log('constructor');
+    // call the started event
     this.context.onStarted(() => this.started());
   }
 
@@ -30,10 +29,8 @@ export default class HelloWorld {
     // set up somewhere to store loaded assets (meshes, textures, animations, gltfs, etc.)
     this.assets = new AssetContainer(this.context);
 
-    console.log('started');
-
     // Load a glTF model
-    const model = Actor.CreateFromGltf(this.assets, {
+    Actor.CreateFromGltf(this.assets, {
       // at the given URL
       uri: 'chrishayuk.glb',
       // Also apply the following generic actor properties.
@@ -42,7 +39,7 @@ export default class HelloWorld {
         transform: {
           local: {
             position: { x: 0, y: -2.4, z: 0 },
-            scale: { x: 3, y: 3, z: 3 }
+            scale: { x: 2.5, y: 2.5, z: 2.5 }
           }
         }
       }
