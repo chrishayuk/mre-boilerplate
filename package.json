@@ -16,7 +16,7 @@
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint --ext .ts src",
     "lint:fix": "eslint --ext .ts src --fix",
-    "preinstall": "npx npm-force-resolutions",
+    "preinstall": "npx npm-force-resolutions --quiet",
     "serve": "node dist/server.js",
     "start": "npm run serve",
     "dev:server": "nodemon --watch './**/*.ts' --exec 'node -r esbuild-register' src/server.ts",
