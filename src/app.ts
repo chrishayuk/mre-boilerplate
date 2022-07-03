@@ -1,12 +1,6 @@
-/*!
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License.
- */
-
 import {
   Actor,
   AssetContainer,
-  ColliderType,
   Context
 } from '@microsoft/mixed-reality-extension-sdk';
 
@@ -16,6 +10,7 @@ import {
 export default class HelloWorld {
   // private variables
   private assets: AssetContainer;
+  private text: Actor;
 
   constructor(private context: Context) {
     // call the started event
@@ -29,18 +24,17 @@ export default class HelloWorld {
     // set up somewhere to store loaded assets (meshes, textures, animations, gltfs, etc.)
     this.assets = new AssetContainer(this.context);
 
-    // Load a glTF model
-    Actor.CreateFromGltf(this.assets, {
-      // at the given URL
-      uri: 'chrishayuk.glb',
-      // Also apply the following generic actor properties.
+    // Create a new actor with no mesh, but some text.
+    this.text = Actor.Create(this.context, {
       actor: {
-        name: 'chrishayuk',
+        name: 'Text',
         transform: {
-          local: {
-            position: { x: 0, y: -2.4, z: 0 },
-            scale: { x: 2.5, y: 2.5, z: 2.5 }
-          }
+          app: { position: { x: 0, y: 0.5, z: 0 } }
+        },
+        text: {
+          contents: 'Hello World!',
+          color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
+          height: 0.3
         }
       }
     });
