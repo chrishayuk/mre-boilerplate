@@ -1,0 +1,7 @@
+{
+	"name": "Hello World Sample",
+	"author": "Chris Hay",
+	"license": "MIT",
+	"repositoryUrl": "https://github.com/chrishayuk/mre-hello",
+	"optionalPermissions": ["user-interaction"]
+}
